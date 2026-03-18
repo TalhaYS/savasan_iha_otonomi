@@ -1,0 +1,64 @@
+<root main_tree_to_execute="Baslangic_Ve_Gorev_Secimi">
+    
+    <BehaviorTree ID="Baslangic_Ve_Gorev_Secimi">
+        <Sequence name="Kalkis_Fazi">
+            
+            <Action ID="KalkisYap"/>
+            
+            <RetryUntilSuccessful num_attempts="-1">
+                <Fallback name="Irtifa_Kontrolu">
+                    <Condition ID="YeterliYukseklikteMi"/>
+                    <Action ID="Yuksekligi10mArttir"/> 
+                </Fallback>
+            </RetryUntilSuccessful>
+
+            <Fallback name="Gorev_Secimi_Hub">
+                <Sequence name="Kamikaze_Kontrolu">
+                    <Condition ID="QrKonumBilgisiGirildiMi"/>
+                    <SubTree ID="Kamikaze_Gorevi_Agaci"/> 
+                </Sequence>
+                
+                <SubTree ID="Siha_Gorevi_Agaci"/> 
+            </Fallback>
+
+        </Sequence>
+    </BehaviorTree>
+
+    <BehaviorTree ID="Siha_Gorevi_Agaci">
+        <Sequence name="Siha_Ana_Akim">
+            
+            <Fallback name="Arama_Veya_Takip">
+                
+                <Sequence name="Hedef_Iceride_Ise_Takip_Et">
+                    <Condition ID="HedefTespitEdildiMi"/>
+                    <Action ID="HedefiOrtala"/>
+                    
+                    <Fallback name="Vurus_Alani_Ve_Tolerans">
+                        <Sequence name="Hedef_Alanin_Icinde">
+                            <Condition ID="HedefVurusAlanindaMi"/>
+                            <Action ID="KilitlenmeSayaciniIlerlet"/>
+                        </Sequence>
+                        
+                        <Sequence name="Hedef_Kacti_Tolerans_Kullan">
+                            <Action ID="ToleransSayaciniIlerlet"/>
+                            <Condition ID="ToleransAsildiMi"/>
+                            <Action ID="TumSayaclariSifirla"/>
+                        </Sequence>
+                    </Fallback>
+                </Sequence>
+
+                <Action ID="HedefAramayiAktiflestir"/>
+                
+            </Fallback>
+
+            <Sequence name="Kilitlenme_Bitis_Islemleri">
+                <Condition ID="Sayac4SaniyeOlduMu"/>
+                <Action ID="IstasyonaPaketiGonder"/>
+                <Action ID="SonVurulanHedefiKaydet"/>
+                <Action ID="TumSayaclariSifirla"/>
+            </Sequence>
+            
+        </Sequence>
+    </BehaviorTree>
+
+</root>
