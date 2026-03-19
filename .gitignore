@@ -2,3 +2,6 @@ build/
 install/
 log/
 .vscode/
+*.pyc
+__pycache__/
+src/BehaviorTree.CPP/
