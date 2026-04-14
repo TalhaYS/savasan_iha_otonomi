@@ -1,25 +1,27 @@
-#include "behaviortree_cpp/condition_node.h"
-#include "rclcpp/rclcpp.hpp"
+#include "ToleransAsildiMi.hpp"
+#include <iostream> // std::cout için eklendi
 
-class ToleransAsildiMi : public BT::ConditionNode
-{
-public:
-    ToleransAsildiMi(const std::string& name, const BT::NodeConfig& config)
-        : BT::ConditionNode(name, config) {}
+// Yapıcı (Constructor) fonksiyon
+ToleransAsildiMi::ToleransAsildiMi(const std::string& name, const BT::NodeConfig& config)
+    : BT::ConditionNode(name, config) {}
 
-    static BT::PortsList providedPorts() {
-        return { BT::InputPort<double>("tolerans_suresi_in") };
+// Port tanımlamaları (Dışarıdan tolerans_suresi_in değerini alıyoruz)
+BT::PortsList ToleransAsildiMi::providedPorts() {
+    return { BT::InputPort<double>("tolerans_suresi_in") };
+}
+
+// Otonom tolerans kontrol mekanizmasının işlediği yer
+BT::NodeStatus ToleransAsildiMi::tick() {
+    double sure = 0.0;
+    
+    // Blackboard'dan anlık tolerans süresini çek
+    getInput("tolerans_suresi_in", sure);
+
+    // Eğer süre 1 saniyeye ulaştıysa veya geçtiyse
+    if (sure >= 1.0) {
+        std::cout << "[HATA] 1 Saniyelik tolerans aşıldı, kilit bozuldu!" << std::endl;
+        return BT::NodeStatus::SUCCESS; // Şemadaki "Yes" oku (Sıfırlamaya gider)
     }
-
-    BT::NodeStatus tick() override
-    {
-        double sure = 0.0;
-        getInput("tolerans_suresi_in", sure);
-
-        if (sure >= 1.0) {
-            std::cout << "[HATA] 1 Saniyelik tolerans aşıldı, kilit bozuldu!" << std::endl;
-            return BT::NodeStatus::SUCCESS; // Şemadaki "Yes" oku (Sıfırlamaya gider)
-        }
-        return BT::NodeStatus::FAILURE; // "No" oku
-    }
-};
+    
+    return BT::NodeStatus::FAILURE; // "No" oku
+}

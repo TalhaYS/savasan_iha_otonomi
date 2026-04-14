@@ -1,21 +1,23 @@
-#include "behaviortree_cpp/action_node.h"
-#include "rclcpp/rclcpp.hpp"
+#include "HedefAramayiAktiflestir.hpp"
+#include <iostream> // std::cout için eklendi
 
-class HedefAramayiAktiflestir : public BT::SyncActionNode
-{
-public:
-    HedefAramayiAktiflestir(const std::string& name, const BT::NodeConfig& config)
-        : BT::SyncActionNode(name, config) {}
+// Yapıcı (Constructor) fonksiyon
+HedefAramayiAktiflestir::HedefAramayiAktiflestir(const std::string& name, const BT::NodeConfig& config)
+    : BT::SyncActionNode(name, config) {}
 
-    static BT::PortsList providedPorts() { return {}; }
+// Port tanımlamaları (Dışarıdan veri almıyorsa boş döner)
+BT::PortsList HedefAramayiAktiflestir::providedPorts() { 
+    return {}; 
+}
 
-    BT::NodeStatus tick() override
-    {
-        // TODO (Ekip Arkadaşı): 
-        // Otopilota (yaw) kendi etrafında yavaşça dönme komutu ver.
-        // Veya önceden belirlenmiş arama (devriye) rotasına gitmesini sağla.
-        
-        std::cout << "[SİHA] Ufuk temiz. Hedef aranıyor..." << std::endl;
-        return BT::NodeStatus::SUCCESS;
-    }
-};
+// Otonom arama/devriye mantığının işlediği yer
+BT::NodeStatus HedefAramayiAktiflestir::tick() {
+    // --------------------------------------------------------
+    // TODO (Ekip Arkadaşı): 
+    // Otopilota (yaw) kendi etrafında yavaşça dönme komutu ver.
+    // Veya önceden belirlenmiş arama (devriye) rotasına gitmesini sağla.
+    // --------------------------------------------------------
+    
+    std::cout << "[SİHA] Ufuk temiz. Hedef aranıyor..." << std::endl;
+    return BT::NodeStatus::SUCCESS;
+}

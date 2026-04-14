@@ -1,21 +1,23 @@
-#include "behaviortree_cpp/action_node.h"
-#include "rclcpp/rclcpp.hpp"
+#include "HedefiOrtala.hpp"
+#include <iostream> // std::cout için eklendi
 
-class HedefiOrtala : public BT::SyncActionNode
-{
-public:
-    HedefiOrtala(const std::string& name, const BT::NodeConfig& config)
-        : BT::SyncActionNode(name, config) {}
+// Yapıcı (Constructor) fonksiyon
+HedefiOrtala::HedefiOrtala(const std::string& name, const BT::NodeConfig& config)
+    : BT::SyncActionNode(name, config) {}
 
-    static BT::PortsList providedPorts() { return {}; }
+// Port tanımlamaları (Dışarıdan veri almıyorsa boş döner)
+BT::PortsList HedefiOrtala::providedPorts() { 
+    return {}; 
+}
 
-    BT::NodeStatus tick() override
-    {
-        // TODO (Ekip Arkadaşı): 
-        // Hedefin piksel koordinatları ile ekranın merkezi (örn: 640x360) arasındaki farkı (error) bul.
-        // PID algoritması ile otopilota (mavros/setpoint_velocity) dönüş komutu (Yaw/Pitch) gönder.
-        
-        std::cout << "[SİHA] Hedef takip ediliyor, ortalanıyor..." << std::endl;
-        return BT::NodeStatus::SUCCESS;
-    }
-};
+// Otonom ortalama ve PID mantığının işlediği yer
+BT::NodeStatus HedefiOrtala::tick() {
+    // --------------------------------------------------------
+    // TODO (Ekip Arkadaşı): 
+    // Hedefin piksel koordinatları ile ekranın merkezi (örn: 640x360) arasındaki farkı (error) bul.
+    // PID algoritması ile otopilota (mavros/setpoint_velocity) dönüş komutu (Yaw/Pitch) gönder.
+    // --------------------------------------------------------
+    
+    std::cout << "[SİHA] Hedef takip ediliyor, ortalanıyor..." << std::endl;
+    return BT::NodeStatus::SUCCESS;
+}

@@ -1,6 +1,6 @@
-<root main_tree_to_execute="Baslangic_Ve_Gorev_Secimi">
+<root BTCPP_format="4" main_tree_to_execute="MainTree">
     
-    <BehaviorTree ID="Baslangic_Ve_Gorev_Secimi">
+    <BehaviorTree ID="MainTree">
         <Sequence name="Kalkis_Fazi">
             
             <Action ID="KalkisYap"/>
@@ -50,7 +50,7 @@
                 <Action ID="HedefAramayiAktiflestir"/>
                 
             </Fallback>
-
+            
             <Sequence name="Kilitlenme_Bitis_Islemleri">
                 <Condition ID="Sayac4SaniyeOlduMu"/>
                 <Action ID="IstasyonaPaketiGonder"/>
@@ -61,4 +61,7 @@
         </Sequence>
     </BehaviorTree>
 
+    <BehaviorTree ID="Kamikaze_Gorevi_Agaci">
+    <AlwaysSuccess name="Kamikaze_Bekleniyor"/>
+    </BehaviorTree>
 </root>
