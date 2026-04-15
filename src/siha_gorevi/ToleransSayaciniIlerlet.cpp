@@ -1,10 +1,10 @@
 #include "ToleransSayaciniIlerlet.hpp"
 
-// Yapıcı (Constructor) fonksiyon
+// Yapıcı fonksiyon
 ToleransSayaciniIlerlet::ToleransSayaciniIlerlet(const std::string& name, const BT::NodeConfig& config)
     : BT::SyncActionNode(name, config) {}
 
-// Port tanımlamaları (Dışarıdan anlık tolerans süresini al, yeni süreyi dışarı ver)
+// Port tanımlamaları
 BT::PortsList ToleransSayaciniIlerlet::providedPorts() {
     return { BT::InputPort<double>("tolerans_suresi_in"),
              BT::OutputPort<double>("tolerans_suresi_out") };
@@ -18,7 +18,7 @@ BT::NodeStatus ToleransSayaciniIlerlet::tick() {
     getInput("tolerans_suresi_in", anlik_tolerans);
 
     // --------------------------------------------------------
-    // TODO (Ekip Arkadaşı): 
+    // TODO: 
     // Geçen zamanı hesaplayıp tolerans süresine ekle.
     // --------------------------------------------------------
     

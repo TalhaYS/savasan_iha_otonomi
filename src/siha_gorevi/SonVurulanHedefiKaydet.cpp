@@ -1,11 +1,11 @@
 #include "SonVurulanHedefiKaydet.hpp"
-#include <iostream> // std::cout için eklendi
+#include <iostream>
 
-// Yapıcı (Constructor) fonksiyon
+// Yapıcı fonksiyon
 SonVurulanHedefiKaydet::SonVurulanHedefiKaydet(const std::string& name, const BT::NodeConfig& config)
     : BT::SyncActionNode(name, config) {}
 
-// Port tanımlamaları (İki port kullanıyoruz: biri giriş, biri çıkış)
+// Port tanımlamaları
 BT::PortsList SonVurulanHedefiKaydet::providedPorts() {
     return { 
         BT::InputPort<int>("anlik_hedef_id"),
@@ -23,9 +23,7 @@ BT::NodeStatus SonVurulanHedefiKaydet::tick() {
     }
 
     // --------------------------------------------------------
-    // TODO: Bu hedef_id'yi "son_vurulan_id" olarak Blackboard'a (Kara Tahta) yaz.
-    // Böylece arama algoritması A'yı vurduktan sonra tekrar A'yı görürse pas geçecek, 
-    // ama B'yi vurduktan sonra A'yı tekrar görürse vurabilecek.
+    // TODO: Bu hedef_id'yi "son_vurulan_id" olarak Blackboard'a yaz.
     // --------------------------------------------------------
     
     // Veriyi Blackboard'a yaz

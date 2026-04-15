@@ -8,7 +8,7 @@
 class KalkisYap : public BT::SyncActionNode
 {
 public:
-    // Yapıcı (Constructor) fonksiyonumuzun imzası
+    // Yapıcı fonksiyonumuzun imzası
     KalkisYap(const std::string& name, const BT::NodeConfig& config);
 
     // Portları belirten fonksiyonumuzun imzası
@@ -18,4 +18,4 @@ public:
     BT::NodeStatus tick() override;
 };
 
-#endif // KALKIS_YAP_HPP
+#endif

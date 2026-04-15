@@ -8,9 +8,9 @@ BT::PortsList KayipAlgoritmasiniBaslat::providedPorts() { return {}; }
 
 BT::NodeStatus KayipAlgoritmasiniBaslat::tick() {
     // --------------------------------------------------------
-    // TODO (Ekip Arkadaşı): 
+    // TODO: 
     // Hedefin son görüldüğü koordinatları Blackboard'dan çek.
-    // O bölgeye doğru genişleyen bir spiral arama (loiter) veya gimbal taraması komutu gönder.
+    // O bölgeye doğru genişleyen bir spiral arama veya gimbal taraması komutu gönder.
     // --------------------------------------------------------
     
     std::cout << "[KAYIP] Tolerans aşıldı! Son bilinen konuma yönelik kayıp arama manevrası başlatıldı!" << std::endl;

@@ -8,7 +8,7 @@
 class SonVurulanHedefiKaydet : public BT::SyncActionNode
 {
 public:
-    // Yapıcı (Constructor) fonksiyonumuzun imzası
+    // Yapıcı fonksiyonumuzun imzası
     SonVurulanHedefiKaydet(const std::string& name, const BT::NodeConfig& config);
 
     // Blackboard'dan anlık hedefi okuyup, son vurulan olarak yazmak için port tanımlaması
@@ -18,4 +18,4 @@ public:
     BT::NodeStatus tick() override;
 };
 
-#endif // SON_VURULAN_HEDEFI_KAYDET_HPP
+#endif

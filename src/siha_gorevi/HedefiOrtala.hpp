@@ -8,7 +8,7 @@
 class HedefiOrtala : public BT::SyncActionNode
 {
 public:
-    // Yapıcı (Constructor) fonksiyonumuzun imzası
+    // Yapıcı fonksiyonumuzun imzası
     HedefiOrtala(const std::string& name, const BT::NodeConfig& config);
 
     // Portları belirten fonksiyonumuzun imzası
@@ -18,4 +18,4 @@ public:
     BT::NodeStatus tick() override;
 };
 
-#endif // HEDEFI_ORTALA_HPP
+#endif

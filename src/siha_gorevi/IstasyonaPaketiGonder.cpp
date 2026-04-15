@@ -1,7 +1,6 @@
 #include "IstasyonaPaketiGonder.hpp"
-#include <iostream> // std::cout için eklendi
-
-// Yapıcı (Constructor) fonksiyon
+#include <iostream>
+// Yapıcı fonksiyon
 IstasyonaPaketiGonder::IstasyonaPaketiGonder(const std::string& name, const BT::NodeConfig& config)
     : BT::SyncActionNode(name, config) {}
 
@@ -13,8 +12,8 @@ BT::PortsList IstasyonaPaketiGonder::providedPorts() {
 // Otonom haberleşme mantığının işlediği yer
 BT::NodeStatus IstasyonaPaketiGonder::tick() {
     // --------------------------------------------------------
-    // TODO (Ekip Arkadaşı): 
-    // Yarışma sunucusunun istediği JSON formatındaki paketi (sistem saati, hedef kordinatı vb.) hazırla.
+    // TODO: 
+    // Yarışma sunucusunun istediği JSON formatındaki paketi hazırla.
     // ROS 2 Publisher ile sunucuya ilet.
     // --------------------------------------------------------
     

@@ -8,7 +8,7 @@
 class YeterliYukseklikteMi : public BT::ConditionNode
 {
 public:
-    // Yapıcı (Constructor) fonksiyonumuzun imzası
+    // Yapıcı fonksiyonumuzun imzası
     YeterliYukseklikteMi(const std::string& name, const BT::NodeConfig& config);
 
     // XML'den hedef irtifayı almak için port tanımlaması
@@ -18,4 +18,4 @@ public:
     BT::NodeStatus tick() override;
 };
 
-#endif // YETERLI_YUKSEKLIKTE_MI_HPP
+#endif

@@ -1,10 +1,10 @@
 #include "HedefTespitEdildiMi.hpp"
 
-// Yapıcı (Constructor) fonksiyon
+// Yapıcı fonksiyon
 HedefTespitEdildiMi::HedefTespitEdildiMi(const std::string& name, const BT::NodeConfig& config)
     : BT::ConditionNode(name, config) {}
 
-// Port tanımlamaları (Dışarıdan son vurulan hedefin ID'sini alıyoruz)
+// Port tanımlamaları
 BT::PortsList HedefTespitEdildiMi::providedPorts() {
     return { BT::InputPort<int>("son_vurulan_id") }; 
 }
@@ -17,8 +17,8 @@ BT::NodeStatus HedefTespitEdildiMi::tick() {
     getInput("son_vurulan_id", son_hedef);
 
     // --------------------------------------------------------
-    // TODO (Ekip Arkadaşı): 
-    // YOLO veya OpenCV'den gelen hedefleri (bounding box) kontrol et.
+    // TODO: 
+    // YOLO veya OpenCV'den gelen hedefleri kontrol et.
     // Eğer ekranda bir İHA varsa ve bu İHA'nın ID'si "son_hedef" DEĞİLSE tespit edildi de.
     // --------------------------------------------------------
     

@@ -7,8 +7,8 @@ BT::PortsList HedefTekrarGoruntudeMi::providedPorts() { return {}; }
 
 BT::NodeStatus HedefTekrarGoruntudeMi::tick() {
     // --------------------------------------------------------
-    // TODO (Ekip Arkadaşı): 
-    // Görüntü işleme (YOLO/OpenCV) topic'inden anlık veriyi kontrol et.
+    // TODO: 
+    // Görüntü işleme topic'inden anlık veriyi kontrol et.
     // Bounding box tekrar ekranda belirdi mi?
     // --------------------------------------------------------
     

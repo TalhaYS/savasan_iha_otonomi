@@ -8,14 +8,14 @@
 class TumSayaclariSifirla : public BT::SyncActionNode
 {
 public:
-    // Yapıcı (Constructor) fonksiyonumuzun imzası
+    // Yapıcı fonksiyonumuzun imzası
     TumSayaclariSifirla(const std::string& name, const BT::NodeConfig& config);
 
-    // Blackboard'daki süreleri sıfırlamak (yazmak) için port tanımlaması
+    // Blackboard'daki süreleri sıfırlamak için port tanımlaması
     static BT::PortsList providedPorts();
 
     // Sıfırlama işlemini yapacak tick fonksiyonunun imzası
     BT::NodeStatus tick() override;
 };
 
-#endif // TUM_SAYACLARI_SIFIRLA_HPP
+#endif 

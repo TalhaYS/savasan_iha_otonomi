@@ -1,7 +1,7 @@
 #include "QrKonumBilgisiGirildiMi.hpp"
-#include <iostream> // std::cout için eklendi
+#include <iostream>
 
-// Yapıcı (Constructor) fonksiyon
+// Yapıcı fonksiyon
 QrKonumBilgisiGirildiMi::QrKonumBilgisiGirildiMi(const std::string& name, const BT::NodeConfig& config)
     : BT::ConditionNode(name, config) {}
 
@@ -13,7 +13,7 @@ BT::PortsList QrKonumBilgisiGirildiMi::providedPorts() {
 // Otonom karar mekanizmasının işlediği yer
 BT::NodeStatus QrKonumBilgisiGirildiMi::tick() {
     // --------------------------------------------------------
-    // TODO (Ekip Arkadaşı): 
+    // TODO: 
     // 1. Yarışma sunucusuna bağlanan ROS 2 Subscriber'ından veri geldi mi kontrol et.
     // 2. Eğer geçerli bir QR koordinatı elimizde varsa "veri_geldi = true" yap ve 
     //    koordinatları değişkene aktar.

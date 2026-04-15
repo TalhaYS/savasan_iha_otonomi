@@ -8,7 +8,7 @@
 class KilitlenmeSayaciniIlerlet : public BT::SyncActionNode
 {
 public:
-    // Yapıcı (Constructor) fonksiyonumuzun imzası
+    // Yapıcı fonksiyonumuzun imzası
     KilitlenmeSayaciniIlerlet(const std::string& name, const BT::NodeConfig& config);
 
     // Portları belirten fonksiyonumuzun imzası
@@ -18,4 +18,4 @@ public:
     BT::NodeStatus tick() override;
 };
 
-#endif // KILITLENME_SAYACINI_ILERLET_HPP
+#endif

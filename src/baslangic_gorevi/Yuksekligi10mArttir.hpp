@@ -8,7 +8,7 @@
 class Yuksekligi10mArttir : public BT::SyncActionNode
 {
 public:
-    // Yapıcı (Constructor) fonksiyonumuzun imzası
+    // Yapıcı fonksiyonumuzun imzası
     Yuksekligi10mArttir(const std::string& name, const BT::NodeConfig& config);
 
     // Blackboard'dan veri okuma ve yazma portlarının tanımlaması
@@ -18,4 +18,4 @@ public:
     BT::NodeStatus tick() override;
 };
 
-#endif // YUKSEKLIGI_10M_ARTTIR_HPP
+#endif

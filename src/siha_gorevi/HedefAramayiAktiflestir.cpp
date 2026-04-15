@@ -1,11 +1,11 @@
 #include "HedefAramayiAktiflestir.hpp"
-#include <iostream> // std::cout için eklendi
+#include <iostream>
 
-// Yapıcı (Constructor) fonksiyon
+// Yapıcıfonksiyon
 HedefAramayiAktiflestir::HedefAramayiAktiflestir(const std::string& name, const BT::NodeConfig& config)
     : BT::SyncActionNode(name, config) {}
 
-// Port tanımlamaları (Dışarıdan veri almıyorsa boş döner)
+// Port tanımlamaları
 BT::PortsList HedefAramayiAktiflestir::providedPorts() { 
     return {}; 
 }
@@ -13,9 +13,9 @@ BT::PortsList HedefAramayiAktiflestir::providedPorts() {
 // Otonom arama/devriye mantığının işlediği yer
 BT::NodeStatus HedefAramayiAktiflestir::tick() {
     // --------------------------------------------------------
-    // TODO (Ekip Arkadaşı): 
-    // Otopilota (yaw) kendi etrafında yavaşça dönme komutu ver.
-    // Veya önceden belirlenmiş arama (devriye) rotasına gitmesini sağla.
+    // TODO: 
+    // Otopilota kendi etrafında yavaşça dönme komutu ver.
+    // Veya önceden belirlenmiş arama rotasına gitmesini sağla.
     // --------------------------------------------------------
     
     std::cout << "[SİHA] Ufuk temiz. Hedef aranıyor..." << std::endl;

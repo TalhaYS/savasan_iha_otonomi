@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(savasan_iha_pkg) # Kendi paketinin adını yazmayı unutma
+project(savasan_iha_pkg)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -11,15 +11,14 @@ find_package(rclcpp REQUIRED)
 find_package(behaviortree_cpp REQUIRED)
 find_package(ament_index_cpp REQUIRED)
 
-# 2. HPP DOSYALARININ YERİNİ GÖSTERME (GÜNCELLENDİ)
-# Artık include yerine src klasörüne bakmasını söylüyoruz
+# 2. HPP DOSYALARININ YERİNİ GÖSTERME
 include_directories(
   src
   src/baslangic_gorevi
   src/siha_gorevi
 )
 
-  # 3. ÇALIŞTIRILABİLİR DOSYA (EXECUTABLE) OLUŞTURMA
+  # 3. ÇALIŞTIRILABİLİR DOSYA OLUŞTURMA
 add_executable(otonom_kontrol_node
   src/main.cpp
   
@@ -54,7 +53,7 @@ ament_target_dependencies(otonom_kontrol_node
   ament_index_cpp
 )
 
-# 5. KURULUM (INSTALL) AYARLARI
+# 5. KURULUM AYARLARI
 install(TARGETS
   otonom_kontrol_node
   DESTINATION lib/${PROJECT_NAME}

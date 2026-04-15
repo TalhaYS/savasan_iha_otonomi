@@ -1,5 +1,5 @@
 #include "KalkisYap.hpp"
-#include <iostream> // std::cout kullanabilmek için ekledik
+#include <iostream>
 
 // Yapıcı (Constructor) fonksiyon
 KalkisYap::KalkisYap(const std::string& name, const BT::NodeConfig& config)
@@ -13,9 +13,9 @@ BT::PortsList KalkisYap::providedPorts() {
 // Otonom kalkış mantığının işlediği yer
 BT::NodeStatus KalkisYap::tick() {
     // --------------------------------------------------------
-    // TODO (Ekip Arkadaşı): 
-    // ROS 2 üzerinden İHA'ya "Takeoff" (Örn: mavros/cmd/takeoff) servisini çağır.
-    // Motorları arm et (çalıştır).
+    // TODO: 
+    // ROS 2 üzerinden İHA'ya "Takeoff" servisini çağır.
+    // Motorları arm et.
     // --------------------------------------------------------
     
     std::cout << "[KALKIŞ] Motorlar arm edildi, kalkış komutu gönderildi." << std::endl;

@@ -1,11 +1,11 @@
 #include "HedefiOrtala.hpp"
-#include <iostream> // std::cout için eklendi
+#include <iostream> 
 
-// Yapıcı (Constructor) fonksiyon
+// Yapıcı fonksiyon
 HedefiOrtala::HedefiOrtala(const std::string& name, const BT::NodeConfig& config)
     : BT::SyncActionNode(name, config) {}
 
-// Port tanımlamaları (Dışarıdan veri almıyorsa boş döner)
+// Port tanımlamaları
 BT::PortsList HedefiOrtala::providedPorts() { 
     return {}; 
 }
@@ -13,9 +13,9 @@ BT::PortsList HedefiOrtala::providedPorts() {
 // Otonom ortalama ve PID mantığının işlediği yer
 BT::NodeStatus HedefiOrtala::tick() {
     // --------------------------------------------------------
-    // TODO (Ekip Arkadaşı): 
-    // Hedefin piksel koordinatları ile ekranın merkezi (örn: 640x360) arasındaki farkı (error) bul.
-    // PID algoritması ile otopilota (mavros/setpoint_velocity) dönüş komutu (Yaw/Pitch) gönder.
+    // TODO: 
+    // Hedefin piksel koordinatları ile ekranın merkezi arasındaki farkı bul.
+    // PID algoritması ile otopilota dönüş komutu gönder.
     // --------------------------------------------------------
     
     std::cout << "[SİHA] Hedef takip ediliyor, ortalanıyor..." << std::endl;

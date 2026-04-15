@@ -8,7 +8,7 @@
 class QrKonumBilgisiGirildiMi : public BT::ConditionNode
 {
 public:
-    // Yapıcı (Constructor) fonksiyonumuzun imzası
+    // Yapıcı fonksiyonumuzun imzası
     QrKonumBilgisiGirildiMi(const std::string& name, const BT::NodeConfig& config);
 
     // Konum verisini Blackboard'a yazmak için port tanımlaması
@@ -18,4 +18,4 @@ public:
     BT::NodeStatus tick() override;
 };
 
-#endif // QR_KONUM_BILGISI_GIRILDI_MI_HPP
+#endif

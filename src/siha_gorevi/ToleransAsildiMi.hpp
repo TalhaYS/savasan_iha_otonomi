@@ -8,7 +8,7 @@
 class ToleransAsildiMi : public BT::ConditionNode
 {
 public:
-    // Yapıcı (Constructor) fonksiyonumuzun imzası
+    // Yapıcı fonksiyonumuzun imzası
     ToleransAsildiMi(const std::string& name, const BT::NodeConfig& config);
 
     // Blackboard'dan tolerans süresini okumak için port tanımlaması
@@ -18,4 +18,4 @@ public:
     BT::NodeStatus tick() override;
 };
 
-#endif // TOLERANS_ASILDI_MI_HPP
+#endif

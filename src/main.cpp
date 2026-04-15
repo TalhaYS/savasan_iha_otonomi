@@ -18,8 +18,6 @@
 #include "siha_gorevi/ToleransSayaciniIlerlet.hpp"
 #include "siha_gorevi/TumSayaclariSifirla.hpp"
 
-// Sınıf başlıkları buraya eklenecek (Gerçek kodda .hpp olarak eklenmelidir)
-// #include "baslangic_gorevi/KalkisYap.hpp" vs...
 
 int main(int argc, char **argv)
 {
@@ -58,10 +56,10 @@ int main(int argc, char **argv)
     BT::Groot2Publisher publisher(tree);
 
     // 3. OTONOMİ DÖNGÜSÜ
-    rclcpp::Rate loop_rate(10); // Saniyede 10 kez çalışsın (10 Hz)
+    rclcpp::Rate loop_rate(10);
     while (rclcpp::ok()) {
-        tree.tickExactlyOnce(); // Ağacı bir tur çalıştır
-        rclcpp::spin_some(node); // ROS 2 callback'lerini dinle
+        tree.tickExactlyOnce();
+        rclcpp::spin_some(node);
         loop_rate.sleep();
     }
 

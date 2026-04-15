@@ -8,7 +8,7 @@
 class HedefTespitEdildiMi : public BT::ConditionNode
 {
 public:
-    // Yapıcı (Constructor) fonksiyonumuzun imzası
+    // Yapıcı fonksiyonumuzun imzası
     HedefTespitEdildiMi(const std::string& name, const BT::NodeConfig& config);
 
     // Vurulan uçağı tekrar görmemek için ID okuyacak port tanımlaması
@@ -18,4 +18,4 @@ public:
     BT::NodeStatus tick() override;
 };
 
-#endif // HEDEF_TESPIT_EDILDI_MI_HPP
+#endif

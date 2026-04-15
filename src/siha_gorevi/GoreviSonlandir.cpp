@@ -8,7 +8,7 @@ BT::PortsList GoreviSonlandir::providedPorts() { return {}; }
 
 BT::NodeStatus GoreviSonlandir::tick() {
     // --------------------------------------------------------
-    // TODO (Ekip Arkadaşı): 
+    // TODO: 
     // İHA'ya "Return to Launch" (RTL) veya "Land" komutu gönder.
     // --------------------------------------------------------
     

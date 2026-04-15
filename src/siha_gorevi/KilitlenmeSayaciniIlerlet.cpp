@@ -1,6 +1,6 @@
 #include "KilitlenmeSayaciniIlerlet.hpp"
 
-// Yapıcı (Constructor) fonksiyonun içi
+// Yapıcı fonksiyonun içi
 KilitlenmeSayaciniIlerlet::KilitlenmeSayaciniIlerlet(const std::string& name, const BT::NodeConfig& config)
     : BT::SyncActionNode(name, config) {}
 
@@ -16,10 +16,10 @@ BT::NodeStatus KilitlenmeSayaciniIlerlet::tick() {
     getInput("kilit_suresi_in", anlik_sure);
 
     // --------------------------------------------------------
-    // TODO (Ekip Arkadaşı): 
-    // 1. Önceki tick'ten bu yana geçen zamanı (delta_time) hesapla.
+    // TODO: 
+    // 1. Önceki tick'ten bu yana geçen zamanı hesapla.
     // 2. anlik_sure değerine bu zamanı ekle ve kilit_suresi_out olarak tahtaya yaz.
-    // 3. Tolerans sayacını sıfırla (çünkü hedef tekrar alana girdi).
+    // 3. Tolerans sayacını sıfırla.
     // --------------------------------------------------------
     
     double yeni_sure = anlik_sure + 0.1; // Örnek artış

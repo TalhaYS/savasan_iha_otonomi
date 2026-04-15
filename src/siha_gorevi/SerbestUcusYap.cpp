@@ -8,8 +8,8 @@ BT::PortsList SerbestUcusYap::providedPorts() { return {}; }
 
 BT::NodeStatus SerbestUcusYap::tick() {
     // --------------------------------------------------------
-    // TODO (Ekip Arkadaşı): 
-    // Otopilota (Mavros) sıradaki waypoint (ara nokta) koordinatını gönder.
+    // TODO: 
+    // Otopilota (Mavros) sıradaki waypoint koordinatını gönder.
     // İHA'nın görev rotasında serbestçe uçmasını sağla.
     // --------------------------------------------------------
     

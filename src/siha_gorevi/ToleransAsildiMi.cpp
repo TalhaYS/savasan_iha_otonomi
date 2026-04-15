@@ -1,11 +1,11 @@
 #include "ToleransAsildiMi.hpp"
-#include <iostream> // std::cout için eklendi
+#include <iostream>
 
-// Yapıcı (Constructor) fonksiyon
+// Yapıcı fonksiyon
 ToleransAsildiMi::ToleransAsildiMi(const std::string& name, const BT::NodeConfig& config)
     : BT::ConditionNode(name, config) {}
 
-// Port tanımlamaları (Dışarıdan tolerans_suresi_in değerini alıyoruz)
+// Port tanımlamaları
 BT::PortsList ToleransAsildiMi::providedPorts() {
     return { BT::InputPort<double>("tolerans_suresi_in") };
 }
@@ -20,7 +20,7 @@ BT::NodeStatus ToleransAsildiMi::tick() {
     // Eğer süre 1 saniyeye ulaştıysa veya geçtiyse
     if (sure >= 1.0) {
         std::cout << "[HATA] 1 Saniyelik tolerans aşıldı, kilit bozuldu!" << std::endl;
-        return BT::NodeStatus::SUCCESS; // Şemadaki "Yes" oku (Sıfırlamaya gider)
+        return BT::NodeStatus::SUCCESS; // Şemadaki "Yes" oku
     }
     
     return BT::NodeStatus::FAILURE; // "No" oku

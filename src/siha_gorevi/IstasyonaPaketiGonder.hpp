@@ -8,14 +8,14 @@
 class IstasyonaPaketiGonder : public BT::SyncActionNode
 {
 public:
-    // Yapıcı (Constructor) fonksiyonumuzun imzası
+    // Yapıcı fonksiyonumuzun imzası
     IstasyonaPaketiGonder(const std::string& name, const BT::NodeConfig& config);
 
-    // Port tanımlaması (Dışarıdan veri almıyorsa boş kalır)
+    // Port tanımlaması
     static BT::PortsList providedPorts();
 
     // Asıl haberleşme ve paket gönderme mantığının çalışacağı tick fonksiyonunun imzası
     BT::NodeStatus tick() override;
 };
 
-#endif // ISTASYONA_PAKETI_GONDER_HPP
+#endif

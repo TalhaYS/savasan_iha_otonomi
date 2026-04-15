@@ -8,7 +8,7 @@
 class ToleransSayaciniIlerlet : public BT::SyncActionNode
 {
 public:
-    // Yapıcı (Constructor) fonksiyonumuzun imzası
+    // Yapıcı fonksiyonumuzun imzası
     ToleransSayaciniIlerlet(const std::string& name, const BT::NodeConfig& config);
 
     // Blackboard'dan tolerans süresini okuyup yazmak için port tanımlaması
@@ -18,4 +18,4 @@ public:
     BT::NodeStatus tick() override;
 };
 
-#endif // TOLERANS_SAYACINI_ILERLET_HPP
+#endif

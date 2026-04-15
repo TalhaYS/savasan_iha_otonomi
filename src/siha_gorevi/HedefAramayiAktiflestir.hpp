@@ -8,7 +8,7 @@
 class HedefAramayiAktiflestir : public BT::SyncActionNode
 {
 public:
-    // Yapıcı (Constructor) fonksiyonumuzun imzası
+    // Yapıcı fonksiyonumuzun imzası
     HedefAramayiAktiflestir(const std::string& name, const BT::NodeConfig& config);
 
     // Portları belirten fonksiyonumuzun imzası
@@ -18,4 +18,4 @@ public:
     BT::NodeStatus tick() override;
 };
 
-#endif // HEDEF_ARAMAYI_AKTIFLESTIR_HPP
+#endif

@@ -8,14 +8,14 @@
 class HedefVurusAlanindaMi : public BT::ConditionNode
 {
 public:
-    // Yapıcı (Constructor) fonksiyonumuzun imzası
+    // Yapıcı fonksiyonumuzun imzası
     HedefVurusAlanindaMi(const std::string& name, const BT::NodeConfig& config);
 
-    // Port tanımlaması (Dışarıdan veri almıyorsa boş kalır)
+    // Port tanımlaması
     static BT::PortsList providedPorts();
 
     // Vuruş alanı kontrolünü yapacak tick fonksiyonunun imzası
     BT::NodeStatus tick() override;
 };
 
-#endif // HEDEF_VURUS_ALANINDA_MI_HPP
+#endif

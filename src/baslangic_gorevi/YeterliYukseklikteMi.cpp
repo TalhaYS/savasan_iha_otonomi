@@ -1,10 +1,10 @@
 #include "YeterliYukseklikteMi.hpp"
 
-// Yapıcı (Constructor) fonksiyon
+// Yapıcı fonksiyon
 YeterliYukseklikteMi::YeterliYukseklikteMi(const std::string& name, const BT::NodeConfig& config)
     : BT::ConditionNode(name, config) {}
 
-// Port tanımlamaları (Dışarıdan "hedef_irtifa" değerini alıyoruz)
+// Port tanımlamaları
 BT::PortsList YeterliYukseklikteMi::providedPorts() {
     return { BT::InputPort<double>("hedef_irtifa") }; 
 }
@@ -12,8 +12,8 @@ BT::PortsList YeterliYukseklikteMi::providedPorts() {
 // Otonom irtifa kontrol mekanizmasının işlediği yer
 BT::NodeStatus YeterliYukseklikteMi::tick() {
     // --------------------------------------------------------
-    // TODO (Ekip Arkadaşı): 
-    // İHA'nın anlık irtifa sensörünü (Örn: /mavros/global_position/rel_alt) oku.
+    // TODO: 
+    // İHA'nın anlık irtifa sensörünü oku.
     // Eğer güncel irtifa >= hedef_irtifa ise SUCCESS döndür.
     // Eğer altındaysa FAILURE döndür.
     // --------------------------------------------------------
